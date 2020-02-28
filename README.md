@@ -33,4 +33,6 @@
     yarn run build
 
 ### Running an example
+https://github.com/unchartedsoftware/cards/blob/master/example/index.html
+
     yarn start
