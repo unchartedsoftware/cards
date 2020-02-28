@@ -1,0 +1,162 @@
+/*
+ * Copyright 2018 Uncharted Software Inc.
+ */
+
+.uncharted-cards-reader-content {
+    $header-height: 33px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: relative;
+
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 1em 0;
+        padding: 0; 
+    }
+
+    .reader-content-header {
+        $header-background-color: #f6f6f6; 
+        position: absolute;
+        z-index: 999;
+        width: 100%;
+        display: flex;
+
+        .header-source-link-box {
+            position: relative;
+            min-width: 170px;
+            max-width: 50%;
+            height: 27px;
+            padding: 0 15px;
+            top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-source-link-background {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #555;
+            opacity: 0.7;
+        }
+
+        .source-link {
+            z-index: 1;
+            flex-grow: 1;
+            text-decoration: none;
+            color: #fff;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .close-button {
+            flex-grow: 1;
+            text-align: right;
+            height: 30px;
+            color: rgba(0, 0, 0, 0.4);
+            align-items: center;
+            display: flex;
+            flex-direction: row-reverse;
+            cursor: pointer;
+            .icon-box {
+                height: calc(100% - 2px);
+                margin-top: 2px;
+                display: flex;
+                align-items: center;
+            }
+            i {
+                padding-right: 6px;
+            }
+            &:hover {
+                i {
+                    color: rgba(0, 0, 0, 1);
+                }
+            }
+        }
+
+        .source-icon {
+            height: 28px;
+            width: 28px;
+            padding: 6px;
+            background: $header-background-color no-repeat 50% 50% / 16px 16px;
+            border-radius: 14px;
+            margin-top: 2px;
+            margin-right: 3px;
+        }
+    }
+
+    .reader-content-viewport {
+        height: 100%;
+        overflow: auto;
+        overflow: overlay; // for webkit browser
+    }
+
+    .reader-content-body {
+        position: relative;
+        padding: 8px 32px 22px;
+        font-size: 12px;
+    }
+
+    &.no-header-image {
+        .reader-content-body {
+            padding-top: 40px;
+        }
+    }
+
+    h1.title  {
+        font-size: 1.3em;
+    }
+
+    .content {
+        margin-top: 10px;
+    }
+
+    .reader-content-meta-data-table {
+        font-size: 12px;
+
+        td {
+            border: 5px solid transparent;
+            &.key-column {
+                border-left: 0;
+            }
+            &.value-column {
+                border-right: 0;
+            }
+            &:first-of-type {
+                border-top: 0;
+            }
+            &:last-of-type {
+                border-bottom: 0;
+            }
+        }
+
+        .key-column {
+            &.value-box {
+                max-width: 170px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-align: right;
+                padding-right: 2px;
+                color: #bbb;
+            }
+        }
+
+        .value-column {
+            &.value-box {
+                padding-left: 2px;
+            }
+            .value img {
+                max-height: 1em;
+                max-width: 100%;
+            }
+        }
+    }
+}

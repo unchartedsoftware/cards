@@ -1,0 +1,113 @@
+/*
+ * Copyright 2018 Uncharted Software Inc.
+ */
+
+.uncharted-cards-style {
+
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        border-radius: 100px;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    ::-webkit-scrollbar:hover {
+        background-color: rgba(0, 0, 0, 0.09);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 100px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover,
+    ::-webkit-scrollbar-thumb:active
+    {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    box-sizing: border-box;
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+    /* css reset */
+    div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+
+    // HTML5 display-role reset for older browsers
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.25;
+        color: inherit;
+    }
+    img {
+        border: 0;
+        vertical-align: middle;
+    }
+    ol,
+    ul {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    a {
+        text-decoration: none;
+        color: #2C83C0;
+    }
+
+    .meta-line {
+        list-style: none;
+        padding: 0;
+        overflow: hidden;
+        font-size: 11px;
+        color: #777;
+        margin-top: 2px;
+    }
+}

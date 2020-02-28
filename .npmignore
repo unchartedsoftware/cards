@@ -1,0 +1,13 @@
+node_modules
+tests
+.eslintignore
+.eslintrc
+.gitignore
+.npmignore
+.npmrc
+karma.conf.js
+.webpack.config.js
+.idea
+.nvmrc
+yarn.lock
+.gitlab-ci.yml

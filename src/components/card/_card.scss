@@ -1,0 +1,307 @@
+/*
+ * Copyright 2018 Uncharted Software Inc.
+ */
+
+@import '../variables';
+
+.flip-tag-hidden {
+    .flip-tag, .back .flip-tag {
+        display: none;
+    }
+}
+
+.uncharted-cards-card {
+    $card-outer: $card-margin + $card-border-width;
+    height: $card-height;
+    padding: $card-margin;
+    flex-shrink: 0;
+    transition: width $card-expanding-animation;
+
+    &.title-only {
+        .card-image {
+            display: none;
+        }
+        .card-body h1 {
+            margin-right: 13px;
+        }
+        .metadata-content {
+            .image {
+                display: none;
+            }
+        }
+    }
+
+    &.shadow-enabled {
+        .card {
+            border: none;
+            box-shadow: $card-shadow;
+        }
+        .card-content-container {
+            padding-left: $card-margin * 2;
+            left: -(2 * $card-margin);
+            &:after {
+                width: calc(100% - #{$card-margin * 2});
+            }
+        }
+    }
+
+    &.flip-container.shadow-enabled {
+        .back {
+            box-shadow: none;
+        }
+        .flipped {
+            .back {
+                box-shadow: $card-shadow;
+            }
+            .front {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .card {
+        border: $card-border;
+        background-color: #fff;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card-content-container {
+        position: absolute;
+        height: 100%;
+        padding-left: $card-outer * 2;
+        left: -(2 * $card-outer);
+        transition: opacity $card-expanding-animation;
+        opacity: 1;
+        z-index: 1;
+        &.card-reader-container {
+            opacity: 0;
+            z-index: 0;
+        }
+    }
+
+    &.expanded .card-content-container {
+        opacity: 0;
+
+        &.card-reader-container {
+            opacity: 1;
+            z-index: 2;
+        }
+    }
+
+    .card-content-container:after {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 85%);
+        width: calc(100% - #{$card-outer * 2});
+        height: 50px;
+        bottom: 0;
+    }
+
+    .metadata-content-container.has-image:after {
+        bottom: 50px;
+    }
+
+    .card-reader-container:after {
+        display: none;
+    }
+
+    .card-header {
+        height: 28px;
+    }
+
+    .card-image + .card-body {
+        padding-top: 8px;
+    }
+
+    .card-content-container {
+
+        h1 {
+            font-size: 13px;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .meta-line {
+            flex-shrink: 0;
+        }
+
+        .summary {
+            margin-top: 10px;
+            font: inherit;
+            font-size: 12px;
+            overflow: hidden;
+        }
+    }
+
+    // Card body
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        overflow-wrap: break-word;
+        padding: 16px 16px 8px 16px;
+    }
+
+    // Card icon
+    .card-icon {
+        height: 28px;
+        width: 28px;
+        padding: 6px;
+        background: #f6f6f6 no-repeat 50% 50% / 16px 16px;
+        border-radius: 14px;
+        position: absolute;
+        top: 2px;
+        right: 3px;
+        z-index: 999;
+        transition: opacity $card-expanding-animation;
+    }
+
+    &.expanded .card-icon {
+        opacity: 0;
+    }
+
+    .meta-data-content {
+        position: relative;
+        height: 100%;
+        $title-line-height: 1.25em;
+
+        .overflow-box {
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .overflow-box.overflow:after {
+            content: "";
+            pointer-events: none;
+            position: absolute;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 85%);
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 5em;
+        }
+
+        .title-box {
+            font-size: 13px;
+            max-height: #{$title-line-height * 2};
+            white-space: normal;
+
+            h1 {
+                font-size: inherit;
+            }
+
+            &.overflow:after {
+                top: $title-line-height;
+                height: $title-line-height;
+            }
+        }
+
+        .subtitle-box {
+            margin-top: 2px;
+            .subtitle {
+                margin: 0;
+                display: inline;
+            }
+        }
+    }
+
+    .meta-data-table {
+        margin-top: 10px;
+        font-size: 12px;
+        vertical-align: bottom;
+        table {
+            table-layout: fixed;
+        }
+        .value-box {
+            &.overflow:after {
+                width: 15px;
+            }
+        }
+
+        .key-box {
+            max-width: 38.2%;
+            text-align: right;
+            padding-right: 2px;
+            color: #bbb;
+        }
+
+        .meta-data-box {
+            overflow: hidden;
+            .value {
+                padding-left: 2px;
+            }
+
+            .value img {
+                max-height: 1em;
+                max-width: 100%;
+            }
+        }
+    }
+
+    .meta-data-images-container {
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        bottom: 0;
+        background-color: #F2F2F2;
+        display: flex;
+        flex-wrap: nowrap;
+        .image {
+            width: 50px;
+            height: 50px;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-left: 1px;
+            flex-shrink: 0;
+        }
+    }
+}
+
+
+.uncharted-cards-card {
+    .flipper,
+    .front,
+    .back {
+        width: 100%;
+        height: 100%;
+    }
+    .flipper {
+        position: relative;
+    }
+}
+
+// Flipping animation
+.uncharted-cards-card.flip-container {
+    perspective: 1000px;
+    .flipper {
+        transition: $card-flipping-animation-duration;
+        transform-style: preserve-3d;
+        &.flipped {
+            transform: rotateY(180deg);
+        }
+    }
+    .front,
+    .back {
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .front {
+        z-index: 2;
+        transform: rotateY(0deg);
+    }
+    .back {
+        transform: rotateY(180deg);
+    }
+}
+
+.uncharted-cards-card.flip-container.expanded {
+    .flipper {
+        transition: none;
+    }
+}

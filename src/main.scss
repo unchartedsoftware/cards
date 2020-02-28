@@ -1,0 +1,14 @@
+/*
+ * Copyright 2018 Uncharted Software Inc.
+ */
+
+@import 'style/base';
+@import 'components/cards/cards';
+.uncharted-cards-style {
+  @import 'components/inlineCardsView/inlineCardsView';
+  @import 'components/wrappedCardsView/wrappedCardsView';
+  @import 'components/card/card';
+  @import 'components/readerContent/readerContent';
+  @import 'components/verticalReader/verticalReader';
+  @import 'components/headerImage/headerImage';
+}

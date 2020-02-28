@@ -1,0 +1,44 @@
+/*
+ * Copyright 2018 Uncharted Software Inc.
+ */
+
+.uncharted-cards-header-image {
+    height: 100px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    .image {
+        height: 100%;
+        position: relative;
+        background-position: 50% 30%;
+        background-repeat: no-repeat;
+        background-color: #fff;
+        flex-grow: 1; 
+        background-size: cover;
+    }
+    .mirror-image-box {
+        flex-grow: 1;
+        position: relative;
+        display: flex;
+
+        .gradient {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            left: 1px;
+        }
+
+        .image {
+            right: 1px;
+            width: 100%;
+            transform: scaleX(-1) translate3d(0, 0, 0);
+            outline: 3.5px solid transparent;
+        }
+
+        .padding {
+            border-left: 1px solid;
+            flex-grow: 1;
+        }
+    }
+}
