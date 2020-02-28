@@ -30,6 +30,8 @@
   ```
 ## Development
     yarn install
+    
+### Build    
     yarn run build
 
 ### Running an example
