@@ -1,6 +1,7 @@
 {
   "name": "@uncharted.software/cards",
   "version": "1.0.0",
+  "description": "A Javascript UI component for browsing documents",
   "main": "dist/uncharted.cards.js",
   "scripts": {
     "test": "./node_modules/.bin/karma start",
