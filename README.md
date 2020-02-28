@@ -2,6 +2,9 @@
 
 > A Javascript UI component for browsing documents
 
+![Alt text](/img/cards-vertical.png?raw=true)
+
+![Alt text](/img/cards-inline.png?raw=true)
 ## Usage
   ```
   <div id="cards-panel" ></div>
