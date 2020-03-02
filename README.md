@@ -5,6 +5,11 @@
 ![Alt text](/img/cards-vertical.png?raw=true)
 
 ![Alt text](/img/cards-inline.png?raw=true)
+
+## Install
+
+    npm i @uncharted.software/cards
+
 ## Usage
   ```
   <div id="cards-panel" ></div>
