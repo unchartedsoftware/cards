@@ -17,7 +17,6 @@
   import Cards from '@uncharted/cards';
 
   const cards = new Cards();
-  const $cards = $('#cards-panel').html(cards.render());
   cards.loadData([
     {
         id: 1,
@@ -32,10 +31,15 @@
         content: 'text-content'
     },
   ]);
+  $('#cards-panel').html(cards.render());
   ```
 ## Development
     yarn install
+    
+### Build    
     yarn run build
 
 ### Running an example
+https://github.com/unchartedsoftware/cards/blob/master/example/index.html
+
     yarn start
